@@ -3,5 +3,5 @@ package bytebank;
 public class Conta {
 	double saldo;
 	int agencia, numero;
-	String titular;
+	char titular;
 }
