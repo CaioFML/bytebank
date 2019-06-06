@@ -1,9 +1,9 @@
 package bytebank;
 
-public class Conta {
+public class Conta extends Cliente {
 	double saldo;
 	int agencia, numero;
-	String titular;
+	Cliente titular;
 	
 	public void deposita(double valor) {
 		this.saldo += valor;
