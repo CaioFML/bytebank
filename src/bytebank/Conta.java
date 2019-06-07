@@ -4,7 +4,17 @@ public class Conta extends Cliente {
 	private double saldo;
 	private int agencia, numero;
 	private Cliente titular;
+	private static int total;
 	
+	public Conta(double saldo, int agencia, int numero, String string) {
+		total++;
+		System.out.println("O total de contas é:" + total);
+		this.saldo = saldo;
+		this.agencia = agencia;
+		this.numero = numero;
+		this.titular = string;
+	}
+
 	public void deposita(double valor) {
 		this.saldo += valor;
 	}
@@ -48,10 +58,18 @@ public class Conta extends Cliente {
 	}
 	
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Não pode ser um número menor do que 0!");
+			return;
+		}
 		this.agencia = agencia;
 	}
 	
 	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("Não pode ser um número menor do que 0!");
+			return;
+		}
 		this.numero = numero;
 	}
 	
@@ -61,6 +79,10 @@ public class Conta extends Cliente {
 	
 	public void setTitular(Cliente titular) {
 		this.titular = titular;
+	}
+	
+	public static int getTotal() {
+		return Conta.total;
 	}
 	
 	
