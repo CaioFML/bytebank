@@ -2,7 +2,7 @@ package bytebank;
 
 public class Funcionario {
 	private String nome, cpf;
-	private double salario;
+	protected double salario;
 	
 	public Funcionario(String nome, String cpf, double salario) {
 		this.nome = nome;
@@ -11,7 +11,7 @@ public class Funcionario {
 	}
 	
 	public double getBonificacao() {
-		return this.salario * 1.1;
+
 	}
 	
 	public String getNome() {
